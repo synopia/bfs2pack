@@ -75,7 +75,4 @@ Every file is overwritten, WITHOUT any remark!
 06-07-11:
   - 1. public release
 
------ Contact me -----
-
-icq: #111595069
 
