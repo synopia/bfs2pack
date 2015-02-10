@@ -33,6 +33,10 @@ Use bfs2pack_con.exe --help for some help. It basically works like any other arc
 Every file is overwritten, WITHOUT any remark! 
 
 ----- History -----
+
+15-02-10:
+  - moved to github on request
+
 06-09-08:
   - added console application
 
