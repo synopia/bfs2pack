@@ -1,0 +1,90 @@
+/**
+file: resources.rc
+the resources binding file
+
+
+Copyright (C) 2006 Paul Fritsche <paul.fritsche@gmx.net>
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+*/
+#include "resources.h"
+
+IDB_BM01              BITMAP    "res/001.bmp"
+IDB_BM02              BITMAP    "res/002.bmp"
+IDB_BM03              BITMAP    "res/003.bmp"
+IDB_BM04              BITMAP    "res/004.bmp"
+IDB_BM05              BITMAP    "res/005.bmp"
+IDB_BM06              BITMAP    "res/006.bmp"
+IDB_BM07              BITMAP    "res/007.bmp"
+IDB_BM08              BITMAP    "res/008.bmp"
+IDB_BM09              BITMAP    "res/009.bmp"
+IDB_BM10              BITMAP    "res/010.bmp"
+IDB_BM11              BITMAP    "res/011.bmp"
+IDB_BM12              BITMAP    "res/012.bmp"
+
+IDI_ICON1             ICON      "res/icon_xp.ico"
+
+IDR_MENU1 MENU
+BEGIN
+     POPUP "Menu"
+     BEGIN
+          MENUITEM "&About...",         IDM_ABOUT
+          MENUITEM SEPARATOR
+          MENUITEM "E&xit\tAlt F4",         IDM_QUIT
+     END
+END
+
+IDD_ABOUT DIALOGEX 0, 0, 255, 223
+STYLE DS_SETFONT | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About bfs2pack release 1.0"
+FONT 8, "Tahoma", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "",IDC_STATIC,7,5,241,179
+    CTEXT           "A packer/unpacker for Flatout2 BFS archives",IDC_STATIC,58, 10,138,8
+    CTEXT           "Copyright 2006 Paul Fritsche <paul.fritsche@gmx.net>",
+                  IDC_STATIC,13,18,228,8
+    CTEXT           "GFX by jelbo",
+                  IDC_STATIC,13,30,228,8
+    LTEXT           "This program is free software; you can redistribute it and/or modify it",                   
+    IDC_STATIC,13,114,222,8
+    LTEXT           "under the terms of the GNU Public Licence as published by the Free",
+                    IDC_STATIC,13,122,216,8
+    LTEXT           "Software Foundation; either version 2 of the Licence, or (at your",
+                    IDC_STATIC,13,130,209,8
+    LTEXT           "option) any later version.",IDC_STATIC,13,138,82,8
+    LTEXT           "This program is distributed in the hope that it will be useful, but",
+                    IDC_STATIC,13,148,202,8
+    LTEXT           "WITHOUT ANY WARRANTY; without even the implied warranty of",
+                    IDC_STATIC,13,156,211,8
+    LTEXT           "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.",
+                    IDC_STATIC,13,164,203,8
+    LTEXT           "See the GNU General Public Licence for more details.",
+                    IDC_STATIC,13,172,168,8
+    DEFPUSHBUTTON   "Close",IDCANCEL,102,195,50,16
+    CTEXT           "GUI Code based on oggdropXP from John Edwards",
+                    IDC_STATIC,15,43,226,8
+    CTEXT           "And XBrowseForFolder from Hans Dietrich",
+                    IDC_STATIC,20,51,216,8
+    LTEXT           "To pack, simply 'drop' any directory, choose output file and options.",
+                    IDC_STATIC,13,75,230,8
+    LTEXT           "To unpack, simply 'drop' any .bfs archive and choose output directory",
+                    IDC_STATIC,11,83,233,8
+    RTEXT           "-",IDC_COMPILE_DATE,164,199,81,8
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME | SS_SUNKEN,13,110,
+                    229,1
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME | SS_SUNKEN,13,71,
+                    229,1
+END

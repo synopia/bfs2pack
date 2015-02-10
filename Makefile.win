@@ -1,0 +1,54 @@
+# Project: bfs2pack_con
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = obj/bfs2pack_con_private.res
+OBJ  = obj/main_console.o obj/arg_parser.o obj/bfs.o obj/huffman.o obj/mmgr.o obj/pack.o obj/unpack.o obj/XBrowseForFolder.o $(RES)
+LINKOBJ  = obj/main_console.o obj/arg_parser.o obj/bfs.o obj/huffman.o obj/mmgr.o obj/pack.o obj/unpack.o obj/XBrowseForFolder.o $(RES)
+LIBS =  -L"E:/dev/MinGW/lib" -lzdll   -s 
+INCS =  -I"E:/dev/MinGW/include" 
+CXXINCS =  -I"E:/dev/MinGW/include/c++" 
+BIN  = bin/bfs2pack_con.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before bin/bfs2pack_con.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "bin\bfs2pack_con.exe" $(LIBS)
+
+obj/main_console.o: src/main_console.cpp
+	$(CPP) -c src/main_console.cpp -o obj/main_console.o $(CXXFLAGS)
+
+obj/arg_parser.o: src/arg_parser.cpp
+	$(CPP) -c src/arg_parser.cpp -o obj/arg_parser.o $(CXXFLAGS)
+
+obj/bfs.o: src/bfs.cpp
+	$(CPP) -c src/bfs.cpp -o obj/bfs.o $(CXXFLAGS)
+
+obj/huffman.o: src/huffman.cpp
+	$(CPP) -c src/huffman.cpp -o obj/huffman.o $(CXXFLAGS)
+
+obj/mmgr.o: src/mmgr.cpp
+	$(CPP) -c src/mmgr.cpp -o obj/mmgr.o $(CXXFLAGS)
+
+obj/pack.o: src/pack.cpp
+	$(CPP) -c src/pack.cpp -o obj/pack.o $(CXXFLAGS)
+
+obj/unpack.o: src/unpack.cpp
+	$(CPP) -c src/unpack.cpp -o obj/unpack.o $(CXXFLAGS)
+
+obj/XBrowseForFolder.o: src/XBrowseForFolder.cpp
+	$(CPP) -c src/XBrowseForFolder.cpp -o obj/XBrowseForFolder.o $(CXXFLAGS)
+
+obj/bfs2pack_con_private.res: bfs2pack_con_private.rc 
+	$(WINDRES) -i bfs2pack_con_private.rc --input-format=rc -o obj/bfs2pack_con_private.res -O coff 
